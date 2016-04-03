@@ -73,6 +73,6 @@ INSERT INTO employee (name, email, designation_id, reporting_manager_id)
 VALUES ('Rajesh', 'rajesh@company.com', 4, 2);
 
 
-SELECT m.name, e.name FROM employee as m LEFT JOIN employee as e ON e.reporting_manager_id = m.id WHERE m.name = 'Kapil' GROUP BY m.name ORDER BY m.name;
+SELECT m.name AS manager, e.name AS employee FROM employee as m LEFT JOIN employee as e ON e.reporting_manager_id = m.id WHERE m.name = 'Kapil' GROUP BY m.name ORDER BY m.name;
 
-SELECT e.name, m.name FROM employee as m LEFT JOIN employee as e ON e.reporting_manager_id = m.id WHERE e.name = 'Rahul';
+SELECT e.name AS employee, m.name AS manager FROM employee as m LEFT JOIN employee as e ON e.reporting_manager_id = m.id WHERE e.name = 'Rahul';
